@@ -12,9 +12,12 @@
 </head>
 <body>
 
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">DOJA CAT &copy;</a>
+      <a class="navbar-brand" href="#">DOJA CAT ©</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,6 +26,7 @@
           <li class="nav-item"><a class="nav-link" href="#bio">Bio</a></li>
           <li class="nav-item"><a class="nav-link" href="#discografia">Discografía</a></li>
           <li class="nav-item"><a class="nav-link" href="#singles">Singles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trivia">Trivia</a></li>
           <li class="nav-item"><a class="nav-link" href="#social">Redes</a></li>
         </ul>
       </div>
@@ -31,10 +35,21 @@
 
   <header class="hero">
     <div class="hero-sun"></div>
+
+    <div class="visualizer" aria-hidden="true">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div>
+    </div>
+
     <div class="hero-content container text-center">
       <p class="hero-eyebrow">— AMALA ZANDILE DLAMINI —</p>
       <h1 class="hero-title">DOJA<br>CAT</h1>
-      <p class="hero-subtitle">RAP · R&B · POP · FUNK · DISCO</p>
+      <p class="hero-subtitle"><span id="typingText"></span><span class="typing-cursor">█</span></p>
       
       <div class="hero-badges d-flex flex-wrap justify-content-center gap-2 my-4">
         <span class="badge-retro">5 Álbumes</span>
@@ -76,19 +91,19 @@
           <p class="section-label mb-4">DATOS DEL TERMINAL</p>
           <div class="row row-cols-2 g-3 text-center mb-4">
             <div class="col">
-              <div class="bio-stat">5</div>
+              <div class="bio-stat" data-target="5">0</div>
               <div class="bio-stat-label">Álbumes LP</div>
             </div>
             <div class="col">
-              <div class="bio-stat">3×</div>
+              <div class="bio-stat" data-target="3" data-suffix="×">0</div>
               <div class="bio-stat-label">Grammy Awards</div>
             </div>
             <div class="col">
-              <div class="bio-stat">#1</div>
+              <div class="bio-stat" data-prefix="#" data-target="1">0</div>
               <div class="bio-stat-label">Billboard Hot100</div>
             </div>
             <div class="col">
-              <div class="bio-stat">10B+</div>
+              <div class="bio-stat" data-target="10" data-suffix="B+">0</div>
               <div class="bio-stat-label">Streams Totales</div>
             </div>
           </div>
@@ -110,61 +125,142 @@
     <div class="text-center mb-5 reveal">
       <p class="section-label">Línea de tiempo</p>
       <h2 class="section-title">Eras Musicales</h2>
+      <p class="spotify-alert">[ HAZ CLICK O PASA EL CURSOR PARA DETONAR EL DNA ]</p>
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-4">
       
       <div class="col reveal">
-        <div class="album-card h-100">
-          <div class="album-cover ac-amala">AMALA</div>
-          <div class="album-info">
-            <span class="album-year">2018</span>
-            <h4 class="album-name">Amala</h4>
-            <p class="album-genre">SoundCloud Rap · R&B</p>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front album-card h-100">
+              <div class="album-cover ac-amala">AMALA</div>
+              <div class="album-info">
+                <span class="album-year">2018</span>
+                <h4 class="album-name">Amala</h4>
+                <p class="album-genre">SoundCloud Rap · R&B</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="dna-title">[ DNA REPORT ]</p>
+              <p class="dna-concept">Internet culture, gatitos y vibras psicodélicas de SoundCloud.</p>
+              <div class="dna-stat-bar">
+                <span>MEME ENERGY</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 95%;"></div></div>
+              </div>
+              <div class="dna-stat-bar">
+                <span>BARS / RAP</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 50%;"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="col reveal">
-        <div class="album-card h-100">
-          <div class="album-cover ac-hotpink">HOT PINK</div>
-          <div class="album-info">
-            <span class="album-year">2019</span>
-            <h4 class="album-name">Hot Pink</h4>
-            <p class="album-genre">Pop · R&B · Disco</p>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front album-card h-100">
+              <div class="album-cover ac-hotpink">HOT PINK</div>
+              <div class="album-info">
+                <span class="album-year">2019</span>
+                <h4 class="album-name">Hot Pink</h4>
+                <p class="album-genre">Pop · R&B · Disco</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="dna-title">[ DNA REPORT ]</p>
+              <p class="dna-concept">Estallido pop global. El nacimiento de una Main Pop Girl irreverente.</p>
+              <div class="dna-stat-bar">
+                <span>GLAM / DISCO</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 90%;"></div></div>
+              </div>
+              <div class="dna-stat-bar">
+                <span>VIRAL DNA</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 100%;"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="col reveal">
-        <div class="album-card h-100">
-          <div class="album-cover ac-planether">PLANET HER</div>
-          <div class="album-info">
-            <span class="album-year">2021</span>
-            <h4 class="album-name">Planet Her</h4>
-            <p class="album-genre">Sci-Fi Pop · Trap</p>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front album-card h-100">
+              <div class="album-cover ac-planether">PLANET HER</div>
+              <div class="album-info">
+                <span class="album-year">2021</span>
+                <h4 class="album-name">Planet Her</h4>
+                <p class="album-genre">Sci-Fi Pop · Trap</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="dna-title">[ DNA REPORT ]</p>
+              <p class="dna-concept">Concepto intergaláctico, futurismo afrofuturista y hits masivos.</p>
+              <div class="dna-stat-bar">
+                <span>SCI-FI BEATS</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 85%;"></div></div>
+              </div>
+              <div class="dna-stat-bar">
+                <span>CHART POWER</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 95%;"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="col reveal">
-        <div class="album-card h-100">
-          <div class="album-cover ac-scarlet">SCARLET</div>
-          <div class="album-info">
-            <span class="album-year">2023</span>
-            <h4 class="album-name">Scarlet</h4>
-            <p class="album-genre">Alt Hip-Hop · Hard Rap</p>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front album-card h-100">
+              <div class="album-cover ac-scarlet">SCARLET</div>
+              <div class="album-info">
+                <span class="album-year">2023</span>
+                <h4 class="album-name">Scarlet</h4>
+                <p class="album-genre">Alt Hip-Hop · Hard Rap</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="dna-title" style="color: #FF3333; text-shadow: 0 0 5px #FF3333;">[ DNA REPORT ]</p>
+              <p class="dna-concept">Rechazo al pop comercial. Sangre, rap agresivo y empoderamiento oscuro.</p>
+              <div class="dna-stat-bar">
+                <span>HARD BARS</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 100%; background: #FF3333;"></div></div>
+              </div>
+              <div class="dna-stat-bar">
+                <span>DEMON TIME</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 90%; background: #FF3333;"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="col reveal">
-        <div class="album-card h-100">
-          <div class="album-cover ac-vie">VIE</div>
-          <div class="album-info">
-            <span class="album-year">2025 - 2026</span>
-            <h4 class="album-name">Vie</h4>
-            <p class="album-genre">80s Funk · Synthpop</p>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front album-card h-100">
+              <div class="album-cover ac-vie">VIE</div>
+              <div class="album-info">
+                <span class="album-year">2025 - 2026</span>
+                <h4 class="album-name">Vie</h4>
+                <p class="album-genre">80s Funk · Synthpop</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <p class="dna-title" style="color: var(--yellow); text-shadow: 0 0 5px var(--yellow);">[ DNA REPORT ]</p>
+              <p class="dna-concept">Nostalgia VHS, sintetizadores análogos y elegancia retro funk.</p>
+              <div class="dna-stat-bar">
+                <span>80s SYNTHS</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 95%; background: var(--yellow);"></div></div>
+              </div>
+              <div class="dna-stat-bar">
+                <span>RETRO GROOVE</span>
+                <div class="progress-retro"><div class="p-bar" style="width: 88%; background: var(--yellow);"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -174,9 +270,6 @@
 
   <div class="divider"></div>
 
-  <!-- ============================================================
-       SECCIÓN SINGLES — con links a Spotify
-       ============================================================ -->
   <section id="singles" class="container py-5">
     <div class="text-center mb-4 reveal">
       <p class="section-label">Catálogo</p>
@@ -240,6 +333,101 @@
 
   <div class="divider"></div>
 
+  <section id="trivia" class="container py-5">
+    <div class="text-center mb-5 reveal">
+      <p class="section-label">Expedientes Secretos</p>
+      <h2 class="section-title">Terminal Datos bionicos</h2>
+    </div>
+
+    <div class="row g-4 reveal">
+      <div class="col-md-6 col-lg-4">
+        <div class="trivia-node">
+          <div class="node-header">
+            <span class="node-icon"><i class="fas fa-sliders"></i></span>
+            <span class="node-tag">LOG_01 // AUDIO</span>
+          </div>
+          <p class="node-text">Aprendió a producir música sola utilizando FL Studio desde los 16 años de edad en su habitación.</p>
+          <div class="node-footer">
+            <span class="node-status">PROCESADO</span>
+            <div class="node-loading"><div class="nl-bar" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="trivia-node">
+          <div class="node-header">
+            <span class="node-icon"><i class="fas fa-cow"></i></span>
+            <span class="node-tag">LOG_02 // MEME</span>
+          </div>
+          <p class="node-text">El super hit viral "Mooo!" fue compuesto, grabado y publicado en un solo día como una broma de internet.</p>
+          <div class="node-footer">
+            <span class="node-status">PROCESADO</span>
+            <div class="node-loading"><div class="nl-bar" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="trivia-node">
+          <div class="node-header">
+            <span class="node-icon"><i class="fas fa-globe"></i></span>
+            <span class="node-tag">LOG_03 // ETHNIC</span>
+          </div>
+          <p class="node-text">Domina dialectos del zulú y posee fuertes raíces sudafricanas heredadas de su padre.</p>
+          <div class="node-footer">
+            <span class="node-status">PROCESADO</span>
+            <div class="node-loading"><div class="nl-bar" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="trivia-node">
+          <div class="node-header">
+            <span class="node-icon"><i class="fas fa-crown"></i></span>
+            <span class="node-tag">LOG_04 // CHARTS</span>
+          </div>
+          <p class="node-text">"Say So" alcanzó el codiciado #1 del Billboard Hot 100 mundial tras el explosivo remix junto a Nicki Minaj.</p>
+          <div class="node-footer">
+            <span class="node-status">PROCESADO</span>
+            <div class="node-loading"><div class="nl-bar" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="trivia-node">
+          <div class="node-header">
+            <span class="node-icon"><i class="fas fa-cut"></i></span>
+            <span class="node-tag">LOG_05 // VISUAL</span>
+          </div>
+          <p class="node-text">Se rapó la cabeza y cejas por completo en 2023 para romper radicalmente los estándares estéticos impuestos.</p>
+          <div class="node-footer">
+            <span class="node-status">PROCESADO</span>
+            <div class="node-loading"><div class="nl-bar" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="trivia-node">
+          <div class="node-header">
+            <span class="node-icon"><i class="fas fa-radio"></i></span>
+            <span class="node-tag">LOG_06 // FUTURE</span>
+          </div>
+          <p class="node-text">La aclamada era Vie se inspira directamente en los sintetizadores analógicos, el synthpop y el funk de los 80s.</p>
+          <div class="node-footer">
+            <span class="node-status">PROCESADO</span>
+            <div class="node-loading"><div class="nl-bar" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <section id="social" class="container py-5 text-center reveal">
     <p class="section-label">Estación de transmisión</p>
     <h2 class="section-title mb-4">Canales Oficiales</h2>
@@ -267,14 +455,29 @@
 
   <footer>
     <div class="container text-center">
-      <p class="m-0">HECHO CON VIAJES EN EL TIEMPO & BOOTSTRAP 5 · DOJA CAT FANPAGE &copy; 2026</p>
+      <p class="m-0">HECHO CON VIAJES EN EL TIEMPO & BOOTSTRAP 5 · DOJA CAT FANPAGE © 2026</p>
       <p class="footer-sub m-0 mt-2">PÁGINA DE PRÁCTICA ACADÉMICA — DESARROLLO WEB RETRO</p>
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-  
+
   <script>
+    /* ── CURSOR PERSONALIZADO ── */
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursorDot');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .album-card, .single-row, .flip-card, .trivia-node').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+
+    /* ── SCROLL REVEAL ── */
     const elementsToReveal = document.querySelectorAll('.reveal');
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -284,8 +487,54 @@
         }
       });
     }, { threshold: 0.15 });
-    
     elementsToReveal.forEach(el => scrollObserver.observe(el));
+
+    /* ── TYPING EFFECT ── */
+    const phrases = [
+      'RAP · R&B · POP · FUNK · DISCO',
+      'GRAMMY WINNER · MULTI-PLATINUM',
+      'LA ERA VIE HA COMENZADO',
+      'AMALA ZANDILE DLAMINI'
+    ];
+    let phraseIndex = 0, charIndex = 0, isDeleting = false;
+    const typingEl = document.getElementById('typingText');
+    function typeLoop() {
+      const current = phrases[phraseIndex];
+      if (isDeleting) {
+        typingEl.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; setTimeout(typeLoop, 500); return; }
+        setTimeout(typeLoop, 40);
+      } else {
+        typingEl.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) { isDeleting = true; setTimeout(typeLoop, 1800); return; }
+        setTimeout(typeLoop, 80);
+      }
+    }
+    typeLoop();
+
+    /* ── CONTADOR ANIMADO ── */
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1500;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = prefix + Math.floor(current) + suffix;
+      }, 16);
+    }
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.bio-stat[data-target]').forEach(animateCounter);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.bio-card').forEach(c => statObserver.observe(c));
   </script>
 </body>
 </html>
