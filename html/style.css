@@ -376,38 +376,6 @@ body::after {
   color: #fff;
 }
 
-.single-play-btn {
-  background: transparent;
-  border: 2px solid var(--magenta);
-  color: var(--magenta);
-  font-family: 'VT323', monospace;
-  padding: 0.1rem 1.2rem;
-  font-size: 1.2rem;
-  transition: all 0.2s;
-}
-
-.single-play-btn.active {
-  background-color: var(--magenta);
-  color: #000;
-  box-shadow: 0 0 8px var(--magenta);
-}
-
-.spotify-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-}
-
-.spotify-panel.open {
-  max-height: 120px;
-}
-
-.spotify-panel iframe {
-  width: 100%;
-  border: 2px solid var(--cyan);
-  background-color: #000;
-}
-
 .quote-box {
   background: rgba(0, 255, 255, 0.04);
   border-left: 6px solid var(--cyan);
@@ -464,4 +432,33 @@ footer {
   font-size: 0.75rem;
   color: rgba(0, 255, 255, 0.3);
   letter-spacing: 2px;
+}
+
+/* ── Singles como links a Spotify ── */
+a.single-row {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+a.single-row:hover .single-title {
+  color: var(--cyan);
+  text-shadow: 0 0 6px var(--cyan);
+}
+
+.single-spotify-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1DB954;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+a.single-row:hover .single-spotify-icon {
+  opacity: 1;
 }
